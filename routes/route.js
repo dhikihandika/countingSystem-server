@@ -9,6 +9,10 @@ module.exports = function(app) {
     const datacountlast = require('../controller/more.controller');
     const { check } = require('express-validator');
 
+    /*
+    domain: monitor.parametrik.co.id
+    port  : 3500
+    */
     //===================================================================================//
     //====================================== RESTful APIs ===============================//
     //=== GET                 ==>  http://localhost:port/get/datacount                ===//

@@ -6,7 +6,7 @@ Date    : 02/01/2020
 
 var express = require('express');
 var app = express();
-var bodyParser = require('body-parser');
+var bodyParser = require('body-parser'); 
 
 
 app.use(function (req, res, next) {
@@ -19,7 +19,7 @@ app.use(bodyParser.json())
 require('./routes/route.js')(app);
  
 // Create a Server
-var server = app.listen(3000, function () {                                     // Set app listen port
+var server = app.listen(3500, function () {                                     // Set app listen port
   var host = server.address().address
   var port = server.address().port
  

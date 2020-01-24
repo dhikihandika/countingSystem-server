@@ -24,9 +24,12 @@ module.exports = function(app) {
     //===================================================================================//
 
     app.post('/post/datacount', [ 
-        check('id_machine', 'No match data input').isLength({min:0, max:10}),        // Validate 'id_machine' its have Lenght {min:0 and max:10}
-        check('count', 'No match data input').isInt(),                               // Validate 'count' its have Integer data type
-        check('length', 'No match data input').isFloat(),                            // Validate 'length' its have Float data type
+        check('id_controller', 'No match data input').isString(),                    // Validate 'id_controller' its a String data type
+        check('id_machine', 'No match data input').isString(),                       // Validate 'id_machine' its a String data type
+        check('clock', 'No match data input').isString(),                            // Validate 'clock' its a String data type
+        check('count', 'No match data input').isInt(),                               // Validate 'count' its a Integer data type
+        check('length', 'No match data input').isFloat(),                            // Validate 'length' its a Float data type
+        check('status', 'No match data input').isInt(),                              // Validate 'status' its a Integer data type
         ], datacount.create);
  
     // Retrieve all data
@@ -40,9 +43,12 @@ module.exports = function(app) {
 
     // Update a data with Id
     app.put('/put/datacount/:datacountId', [ 
-        check('id_machine', 'No match data input').isLength({min:0, max:10}),        // Validate 'id_machine' its have Lenght {min:0 and max:10}
-        check('count', 'No match data input').isInt(),                               // Validate 'count' its have Integer data type
-        check('length', 'No match data input').isFloat(),                            // Validate 'length' its have Float data type
+        check('id_controller', 'No match data input').isString(),                    // Validate 'id_controller' its a String data type
+        check('id_machine', 'No match data input').isString(),                       // Validate 'id_machine' its a String data type
+        check('clock', 'No match data input').isString(),                            // Validate 'clock' its a String data type
+        check('count', 'No match data input').isInt(),                               // Validate 'count' its a Integer data type
+        check('length', 'No match data input').isFloat(),                            // Validate 'length' its a Float data type
+        check('status', 'No match data input').isInt(),                              // Validate 'status' its a Integer data type
         ], datacount.update);
  
     // Delete a data with Id

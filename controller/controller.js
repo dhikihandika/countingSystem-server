@@ -19,9 +19,12 @@ exports.create = (req, res) => {
  }
   // Save to MySQL database 
   DataCount.create({ 
+    id_controller: req.body.id_controller,
     id_machine: req.body.id_machine,
+    clock: req.body.clock,
     count: req.body.count,
-    length: req.body.length
+    length: req.body.length,
+    status: req.body.status
   }).then(datacount => {    
     // Send created datacount to client
     // res.json({
@@ -41,10 +44,6 @@ exports.create = (req, res) => {
 exports.findAll = (req, res) => {
   DataCount.findAll().then(datacount => {
     //Send all datacount to Client
-    //let name="data";
-    //let tick=JSON.stringify(name);
-    //let tack=JSON.stringify(datacount)
-    //res.send("{" + tick + ":" + tack + "}");
     res.send(datacount);
   });
 };
@@ -70,9 +69,12 @@ exports.update = (req, res) => {
   }
   const id = req.params.datacountId;
   DataCount.update( {
+    id_controller: req.body.id_controller,
     id_machine: req.body.id_machine,
+    clock: req.body.clock,
     count: req.body.count,
-    length: req.body.length
+    length: req.body.length,
+    status: req.body.status
    }, 
         { where: {id: req.params.datacountId} }
            ).then(() => {
